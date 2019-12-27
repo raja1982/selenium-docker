@@ -11,8 +11,9 @@ pipeline {
         stage('Build Image') {
             steps {
                 //sh
-                bat "docker build -t='rajasha/selenium-docker' ."
-            }
+                //bat "docker build -t='rajasha/selenium-docker' ."
+                bat "docker build ."   
+	    }
         }
         stage('Push Image') {
             steps {
