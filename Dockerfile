@@ -19,7 +19,7 @@ ADD book-flight-module.xml				book-flight-module.xml
 ADD search-module.xml					search-module.xml
 
 # ADD health check script
-ADD healthcheck.sh                      healthcheck.sh
+#ADD healthcheck.sh                      healthcheck.sh
 # ADD health check script
 #RUN wget https://s3.amazonaws.com/selenium-docker/healthcheck/healthcheck.sh
 
@@ -28,5 +28,5 @@ ADD healthcheck.sh                      healthcheck.sh
 # MODULE
 
 #ENTRYPOINT sh healthcheck.sh
-#ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DBROWSER=$BROWSER -DHUB_HOST=$HUB_HOST org.testng.TestNG $MODULE will change because it is inside shell script
-ENTRYPOINT sh healthcheck.sh
+ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DBROWSER=$BROWSER -DHUB_HOST=$HUB_HOST org.testng.TestNG $MODULE
+#ENTRYPOINT sh healthcheck.sh
